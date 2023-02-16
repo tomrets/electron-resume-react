@@ -3,15 +3,17 @@ import './index.less';
 import { shell } from 'electron';
 import { useHistory } from 'react-router';
 import Logo from '@assets/logo.png';
+import { ROUTER_ENTRY, ROUTER_KEY } from '../../common/constants/router';
+import { isHttpOrHttpsUrl } from '../../common/utils/router';
 
 function Root() {
   const history = useHistory();
 
-  const onRouterToLink = (text: string) => {
-    if (text === '简历') {
-      history.push('/resume');
+  const onRouterToLink = (router: TSRouter.Item) => {
+    if (isHttpOrHttpsUrl(router.url)) {
+      shell.openExternal(router.url);
     } else {
-      shell.openExternal('https://github.com/PDKSophia/visResumeMook');
+      history.push(router.url);
     }
   };
   return (
@@ -21,10 +23,10 @@ function Root() {
         <div styleName="title">resume 简历平台</div>
         <div styleName="tips">简历平台</div>
         <div styleName="action">
-          {['介绍', '简历', '源码'].map((text, index) => {
+          {ROUTER_ENTRY.map((router: TSRouter.Item) => {
             return (
-              <div key={index} styleName="item" onClick={() => onRouterToLink(text)}>
-                {text}
+              <div key={router.key} styleName="item" onClick={() => onRouterToLink(router)}>
+                {router.text}
               </div>
             );
           })}

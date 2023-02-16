@@ -2,11 +2,11 @@
 import fs, { promises as fsPromiseAPIs } from 'fs';
 
 const fileAction = {
-  read: (path: string, encoding: BufferEncoding): Promise<string> => {
-    return fsPromiseAPIs.readFile(path, { encoding: encoding || 'utf8' });
+  read: (path: string): Promise<string> => {
+    return fsPromiseAPIs.readFile(path, { encoding: 'utf8' });
   },
-  write: (path: string, content: string, encoding: BufferEncoding): Promise<void> => {
-    return fsPromiseAPIs.writeFile(path, content, { encoding: encoding || 'utf8' });
+  write: (path: string, content: string): Promise<void> => {
+    return fsPromiseAPIs.writeFile(path, content, { encoding: 'utf8' });
   },
   rename: (oldPath: string, newPath: string) => {
     return fsPromiseAPIs.rename(oldPath, newPath);

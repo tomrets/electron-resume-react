@@ -1,7 +1,3 @@
-/**
- * @description 图片上传组件，基于 Input 二次封装
- * @author {pengdaokuan}
- */
 import React from 'react';
 import './index.less';
 import Upload from '../Upload';
@@ -25,14 +21,14 @@ const ImageUpload: React.FC<IProps> = ({
   icon,
   text = '上传头像',
   preventInputManager = false,
-  onAfterClick = () => {},
+  onAfterClick = () => { },
   ...otherProps
 }) => {
   return (
     <div className="my_input_image_upload_wrapper" onClick={onAfterClick}>
       {!preventInputManager && (
         <div className="my_input_image_upload_input">
-          <Upload {...otherProps} onAfterClick={() => {}} style={{ width: '112px', height: '152px' }} />
+          <Upload {...otherProps} onAfterClick={() => { }} style={{ width: '112px', height: '152px' }} />
         </div>
       )}
       <div className="my_input_image_upload_box">

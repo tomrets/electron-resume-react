@@ -1,7 +1,3 @@
-/**
- * @desc 工作经历
- * @author pengdaokuan
- */
 import './index.less';
 import React from 'react';
 

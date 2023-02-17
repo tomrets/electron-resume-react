@@ -1,7 +1,3 @@
-/**
- * @desc 模板1
- * @author pengdaokuan
- */
 import React from 'react';
 import './index.less';
 import Avatar from './components/Avatar';

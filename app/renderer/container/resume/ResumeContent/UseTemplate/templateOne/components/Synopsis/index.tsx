@@ -1,7 +1,3 @@
-/**
- * @desc 简单介绍
- * @author pengdaokuan
- */
 import React from 'react';
 import './index.less';
 

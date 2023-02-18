@@ -54,7 +54,9 @@ function Skill({ onClose }: IProps) {
             </div>
             <MyInput
               type="textarea"
-              onChange={(e) => { }}
+              onChange={(e) => {
+                console.log(e);
+              }}
               rows={5}
               value={skill}
               placeholder="例如 Vue、React"

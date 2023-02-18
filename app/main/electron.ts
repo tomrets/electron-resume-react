@@ -26,8 +26,6 @@ function createWindow() {
     // 👇 看到了吗，在开发环境下，我们加载的是运行在 7001 端口的 React
     mainWindow.loadURL(`http://127.0.0.1:7001`);
   } else {
-    console.log('dirnmae:', __dirname);
-
     mainWindow.loadURL(`file://${path.join(__dirname, '../dist/index.html')}`);
   }
 }

@@ -22,8 +22,9 @@ const fileAction = {
    * @param path 路径
    * @returns {Promise}
    */
-  write: (path: string, content: string, encoding: BufferEncoding): Promise<void> => {
-    return fsPromiseAPIs.writeFile(path, content, { encoding: encoding || 'utf8' });
+  write: (path: string, content: any, encoding: BufferEncoding): Promise<void> => {
+    let updateContent = typeof content === 'string' ? content : JSON.stringify(content);
+    return fsPromiseAPIs.writeFile(path, updateContent, { encoding: encoding || 'utf8' });
   },
   /**
    * @description 重命名文件
